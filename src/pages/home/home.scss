@@ -1,0 +1,11 @@
+page-home {
+}
+    ion-content{
+        background-color: color($colors, verdeclaro, base) !important;
+    }
+    a{
+        color: color($colors, light, base) !important;
+        font-weight: bold;
+    }
+
+    

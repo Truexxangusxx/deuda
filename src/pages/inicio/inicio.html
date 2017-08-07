@@ -1,0 +1,99 @@
+<ion-header>
+
+  <ion-navbar color="verdeoscuro">
+    <ion-title>inicio</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="cabecera">
+    <div text-center fixed class="deuda" color="primary">
+      <a href="">Deuda: 169 S/.</a>
+    </div>
+    <div text-center class="haber">
+      <a href="">Haber: 169 S/.</a>
+    </div>
+
+  </div>
+
+  <ion-list>
+
+    <ion-item *ngFor="let item of lista" (click)="verdetalle(item.id)">
+      <ion-thumbnail item-start text-center padding-vertical>
+        <h2 class="{{item.tipo}}">{{item.valor}} S/.</h2>
+      </ion-thumbnail>
+      <h2>{{item.nombre}}</h2>
+      <p>{{item.descripcion}}</p>
+    </ion-item>
+    <!--
+    <ion-item>
+      <ion-thumbnail item-start text-center padding-vertical>
+        <h2 class="haber">50 S/.</h2>
+      </ion-thumbnail>
+      <h2>Carlos Medina Carranza</h2>
+      <p>Almuerzo en BCP</p>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail item-start text-center padding-vertical>
+        <h2 class="deuda">50 S/.</h2>
+      </ion-thumbnail>
+      <h2>Carlos Medina Carranza</h2>
+      <p>Almuerzo en BCP</p>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail item-start text-center padding-vertical>
+        <h2 class="haber">50 S/.</h2>
+      </ion-thumbnail>
+      <h2>Carlos Medina Carranza</h2>
+      <p>Almuerzo en BCP</p>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail item-start text-center padding-vertical>
+        <h2 class="deuda">50 S/.</h2>
+      </ion-thumbnail>
+      <h2>Carlos Medina Carranza</h2>
+      <p>Almuerzo en BCP</p>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail item-start text-center padding-vertical>
+        <h2 class="deuda">50 S/.</h2>
+      </ion-thumbnail>
+      <h2>Carlos Medina Carranza</h2>
+      <p>Almuerzo en BCP</p>
+    </ion-item>
+-->
+
+
+  </ion-list>
+
+
+
+</ion-content>
+
+
+<ion-footer>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        <button (click)="presentModal()" ion-button color="primary">
+      Haber
+    </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button color="verdeoscuro" (click)="verdetalle(2)">
+      Todo
+    </button>
+      </ion-col>
+      <ion-col text-center>
+        <button (click)="deudaModal()" ion-button color="danger">
+      Deuda
+    </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-footer>

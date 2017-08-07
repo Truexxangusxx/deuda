@@ -1,0 +1,37 @@
+<div text-center>
+  <img width="200" src="assets/images/logo4.png" alt="">
+</div>
+
+<ion-list>
+
+  <ion-item color="verdeclaro">
+    <ion-label floating>Correo</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario.correo"></ion-input>
+  </ion-item>
+
+  <ion-item color="verdeclaro">
+    <ion-label floating>Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="usuario.password"></ion-input>
+  </ion-item>
+
+</ion-list>
+
+
+<button color="verdeoscuro" ion-button icon-left block (click)="signin()">
+  <ion-icon name="contact"></ion-icon>
+  Ingresar
+</button>
+
+
+<ion-grid>
+  <ion-row>
+    <ion-col text-center>
+      <a (click)="registrar()">Registrarse</a>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col text-center>
+      <a (click)="mipagina()">Recuperar contraseña</a>
+    </ion-col>
+  </ion-row>
+</ion-grid>

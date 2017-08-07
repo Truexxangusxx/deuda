@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-navbar color="verdeoscuro">
+    <ion-title>registro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+<ion-list>
+
+  <ion-item color="verdeclaro">
+    <ion-label floating>Nombre</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario.nombre"></ion-input>
+  </ion-item>
+  
+  <ion-item color="verdeclaro">
+    <ion-label floating>Correo</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario.correo"></ion-input>
+  </ion-item>
+
+  <ion-item color="verdeclaro">
+    <ion-label floating>Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="usuario.password"></ion-input>
+  </ion-item>
+
+</ion-list>
+
+<div text-center>
+  <button color="verdeoscuro" ion-button icon-left (click)="registrar()">
+    <ion-icon name="checkmark-circle"></ion-icon>
+    Registrar
+  </button>
+  <button color="verdeoscuro" ion-button icon-left (click)="regresar()">
+    <ion-icon name="close-circle"></ion-icon>
+    Cancelar
+  </button>
+</div>
+
+
+
+
+
+
+</ion-content>
