@@ -13,5 +13,39 @@
 </ion-header>
 
 <ion-content>
+  <ion-list>
+
+    <ion-item color="verdeclaro">
+      <ion-label floating>Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="deuda.nombre"></ion-input>
+    </ion-item>
+
+    <ion-item color="verdeclaro">
+      <ion-label floating>Descripcion</ion-label>
+      <ion-input type="text" [(ngModel)]="deuda.descripcion"></ion-input>
+    </ion-item>
+
+    <ion-item color="verdeclaro">
+      <ion-label floating>telefono</ion-label>
+      <ion-input type="text" [(ngModel)]="deuda.telefono"></ion-input>
+    </ion-item>
+
+    <ion-item color="verdeclaro">
+      <ion-label floating>monto</ion-label>
+      <ion-input type="text" [(ngModel)]="deuda.valor"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div text-center>
+    <button color="verdeoscuro" ion-button icon-left (click)="grabar()">
+    <ion-icon name="checkmark-circle"></ion-icon>
+    Grabar
+  </button>
+    <button color="verdeoscuro" ion-button icon-left (click)="dismiss()">
+    <ion-icon name="close-circle"></ion-icon>
+    Cancelar
+  </button>
+  </div>
 
 </ion-content>

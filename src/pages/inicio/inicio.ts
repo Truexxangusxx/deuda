@@ -48,6 +48,17 @@ export class Inicio {
   presentModal() {
     let modal = this.modalCtrl.create(HaberPage);
     modal.present();
+    modal.onDidDismiss(() => {
+      var link = 'http://localhost:3000/deudas';
+      var datos = JSON.stringify({});
+      var headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+
+      this.http.get(link).map(res => res.json()).subscribe(data => {
+        console.log(data);
+        this.lista = data.reverse();
+      });
+    });
   }
   deudaModal() {
     let modal = this.modalCtrl.create(DeudaPage, this.lista);
@@ -65,9 +76,9 @@ export class Inicio {
     });
   }
 
-  verdetalle(id){
+  verdetalle(id,tipo){
     console.log(id);
-    this.navCtrl.push(Detalle, {deuda_id: id});
+    this.navCtrl.push(Detalle, {deuda_id: id, tipo: tipo});
   }
 
 
