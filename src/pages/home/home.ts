@@ -19,7 +19,7 @@ export class HomePage {
 
   ionViewDidLoad() {
 
-    this.storage.get('name').then((val) => {
+    this.storage.get('id').then((val) => {
       console.log('Your mail is', val);
       if (val!=null){
         this.navCtrl.push(Inicio);

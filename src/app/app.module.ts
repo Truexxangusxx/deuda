@@ -16,6 +16,7 @@ import { HaberPage } from '../pages/haber-page/haber-page';
 import { DeudaPage } from '../pages/deuda-page/deuda-page';
 import { Detalle } from '../pages/detalle/detalle';
 import { Detalledeuda } from '../pages/detalledeuda/detalledeuda';
+import { Todo } from '../pages/todo/todo';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { Detalledeuda } from '../pages/detalledeuda/detalledeuda';
     DeudaPage,
     Detalle,
     Detalledeuda,
+    Todo,
     Login
   ],
   imports: [
@@ -50,6 +52,7 @@ import { Detalledeuda } from '../pages/detalledeuda/detalledeuda';
     DeudaPage,
     Detalle,
     Detalledeuda,
+    Todo,
   ],
   providers: [
     StatusBar,

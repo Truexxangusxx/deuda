@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar color="verdeoscuro">
+    <ion-title>Deudas y Haberes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="cabecera">
+    <div text-center fixed class="deuda" color="primary">
+      Deuda: {{monto_deuda}} S/.
+    </div>
+    <div text-center class="haber">
+      Haber: {{monto_haber}} S/.
+    </div>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  </div>
+  <ion-list>
+
+    <ion-item *ngFor="let item of lista" (click)="detalledeuda(item.id,item.tipo)">
+      <ion-thumbnail item-start text-center padding-vertical>
+        <h2 class="{{item.tipo}}">{{item.valor}} S/.</h2>
+      </ion-thumbnail>
+      <h2>{{item.nombre}}</h2>
+      <p>{{item.descripcion}}</p>
+    </ion-item>
+
+
+  </ion-list>
+
+</ion-content>

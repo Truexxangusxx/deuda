@@ -1,4 +1,4 @@
-page-inicio {
+page-todo {
     .deuda {
         background: color($colors, danger) !important;
         padding: 10px;
@@ -7,9 +7,10 @@ page-inicio {
         background: color($colors, primary) !important;
         padding: 10px;
     }
-    div.deuda, div.haber{
-        height: 40px;
+    div.deuda,
+    div.haber {
         color: white;
+        height: 40px;
     }
     .scroll-content {
         padding: 0px !important;
@@ -17,18 +18,21 @@ page-inicio {
     ion-list {
         margin-bottom: 0px !important;
     }
-    h2.haber, h2.deuda{
+    h2.haber,
+    h2.deuda {
         color: white;
         width: 100px !important;
         padding: 10px !important;
-        
     }
-    .cabecera{
+    .cabecera {
         position: fixed;
         width: 100%;
         z-index: 10000;
     }
-    ion-list{
-        margin-top: 80px !important;
+    ion-list {
+        margin-top: 120px !important;
+    }
+    ion-searchbar{
+        background: color($colors, verdeoscuro) !important;
     }
 }

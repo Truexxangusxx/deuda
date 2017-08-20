@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
 import { Http } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
 import { Inicio } from '../../pages/inicio/inicio';
@@ -20,6 +20,7 @@ export class Detalle {
     public navCtrl: NavController
     , public navParams: NavParams
     , public http: Http
+    , public viewCtrl: ViewController
   ) {
     this.deuda_id=this.navParams.get('deuda_id');
     this.tipo=this.navParams.get('tipo');
@@ -32,13 +33,13 @@ export class Detalle {
   }
 
   obtener(){
-    this.http.get('http://localhost:3000/deudas/'+this.deuda_id).map(res => res.json()).subscribe(data => {
+    this.http.get('http://192.168.0.10:3000/deudas/'+this.deuda_id).map(res => res.json()).subscribe(data => {
         console.log(data);
         this.deuda = data;
       });
   }
   eliminar(){
-    var link = 'http://localhost:3000/deudas/eliminar/'+this.deuda_id;
+    var link = 'http://192.168.0.10:3000/deudas/eliminar/'+this.deuda_id;
     var datos = JSON.stringify({  });
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -46,12 +47,12 @@ export class Detalle {
     this.http.post(link, datos, { headers: headers })
       .subscribe(data => {
         console.log(data);
-        this.navCtrl.push(Inicio);
+        this.viewCtrl.dismiss();
       });
   }
 
   actualizar(){
-    var link = 'http://localhost:3000/deudas/'+this.deuda_id;
+    var link = 'http://192.168.0.10:3000/deudas/'+this.deuda_id;
     var datos = JSON.stringify({ nombre: this.deuda.nombre, descripcion: this.deuda.descripcion, telefono: this.deuda.telefono, valor: this.deuda.valor, tipo: this.tipo });
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -59,8 +60,12 @@ export class Detalle {
     this.http.put(link, datos, { headers: headers })
       .subscribe(data => {
         console.log(data);
-        this.navCtrl.push(Inicio);
+        this.viewCtrl.dismiss();
       });
+  }
+
+  dismiss() {
+    this.viewCtrl.dismiss();
   }
 
 }

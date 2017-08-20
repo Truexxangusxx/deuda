@@ -38,7 +38,7 @@ export class Login {
   }
 
   signin() {
-    var link = 'http://localhost:3000/users/buscar';
+    var link = 'http://192.168.0.10:3000/users/buscar';
     var datos = JSON.stringify({ correo: this.usuario.correo, password: this.usuario.password });
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -46,7 +46,7 @@ export class Login {
     this.http.post(link, datos, { headers: headers })
       .subscribe(data => {
         console.log(data);
-        this.storage.set('name', this.usuario.correo);
+        this.storage.set('id', this.usuario.correo);
         this.navCtrl.push(Inicio);
       });
   }

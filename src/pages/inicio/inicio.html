@@ -8,63 +8,29 @@
 
 
 <ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
   <div class="cabecera">
     <div text-center fixed class="deuda" color="primary">
-      <a href="">Deuda: 169 S/.</a>
+      Deuda: {{monto_deuda}} S/.
     </div>
     <div text-center class="haber">
-      <a href="">Haber: 169 S/.</a>
+      Haber: {{monto_haber}} S/.
     </div>
 
   </div>
 
   <ion-list>
 
-    <ion-item *ngFor="let item of lista" (click)="verdetalle(item.id,item.tipo)">
+    <ion-item *ngFor="let item of lista" (click)="detalledeuda(item.id,item.tipo)">
       <ion-thumbnail item-start text-center padding-vertical>
         <h2 class="{{item.tipo}}">{{item.valor}} S/.</h2>
       </ion-thumbnail>
       <h2>{{item.nombre}}</h2>
       <p>{{item.descripcion}}</p>
     </ion-item>
-    <!--
-    <ion-item>
-      <ion-thumbnail item-start text-center padding-vertical>
-        <h2 class="haber">50 S/.</h2>
-      </ion-thumbnail>
-      <h2>Carlos Medina Carranza</h2>
-      <p>Almuerzo en BCP</p>
-    </ion-item>
-    <ion-item>
-      <ion-thumbnail item-start text-center padding-vertical>
-        <h2 class="deuda">50 S/.</h2>
-      </ion-thumbnail>
-      <h2>Carlos Medina Carranza</h2>
-      <p>Almuerzo en BCP</p>
-    </ion-item>
-    <ion-item>
-      <ion-thumbnail item-start text-center padding-vertical>
-        <h2 class="haber">50 S/.</h2>
-      </ion-thumbnail>
-      <h2>Carlos Medina Carranza</h2>
-      <p>Almuerzo en BCP</p>
-    </ion-item>
-    <ion-item>
-      <ion-thumbnail item-start text-center padding-vertical>
-        <h2 class="deuda">50 S/.</h2>
-      </ion-thumbnail>
-      <h2>Carlos Medina Carranza</h2>
-      <p>Almuerzo en BCP</p>
-    </ion-item>
-    <ion-item>
-      <ion-thumbnail item-start text-center padding-vertical>
-        <h2 class="deuda">50 S/.</h2>
-      </ion-thumbnail>
-      <h2>Carlos Medina Carranza</h2>
-      <p>Almuerzo en BCP</p>
-    </ion-item>
--->
 
 
   </ion-list>
@@ -84,7 +50,7 @@
     </button>
       </ion-col>
       <ion-col text-center>
-        <button ion-button color="verdeoscuro" (click)="verdetalle(2)">
+        <button ion-button color="verdeoscuro" (click)="todo()">
       Todo
     </button>
       </ion-col>
